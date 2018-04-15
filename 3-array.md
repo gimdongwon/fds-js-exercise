@@ -3,22 +3,66 @@
 두 정수 `start`, `end`를 입력받아, `start`부터 `end`까지의 모든 정수를 배열로 반환하는 함수를 작성하세요.
 
 예:
-```
+
+```js
 range(3, 6); -> [3, 4, 5, 6]
+```
+
+```js
+function range(start,end){
+  const arr = [];
+  for(let i = start; i <= end; i++){
+    arr.push(i);
+  }
+  return arr;
+}
 ```
 
 ### 문제 2
 
 수 타입의 값으로만 이루어진 배열을 입력받아, 그 값들의 합을 구하는 함수를 작성하세요.
 
+```js
+function sum (arr){
+  let result=0;
+  for(i=0; i < arr.length; i++){
+    result += arr[i]
+  }
+  return result;
+}
+```
+
 ### 문제 3
 
 배열을 입력받아, falsy인 요소가 제거된 새 배열을 반환하는 함수를 작성하세요.
+
+```js
+function noFalsy (arr){
+  removeFalsy = [];
+  for(i=0; i < arr.length; i++){
+    if(arr[i]){
+      removeFalsy.push(arr[i]);
+    }
+  }return removeFalsy;
+}
+```
 
 ### 문제 4
 
 배열을 입력받아, 중복된 요소가 제거된 새 배열을 반환하는 함수를 작성하세요.
 
+```js
+function noDuplicate (arr){
+  newArr = [];
+  for(i=0; i < arr.length; i++){
+    if(newArr.includes(arr[i])){
+      i++;
+    }else{
+    newArr.push(arr[i]);
+  }
+}return newArr;
+}
+```
 ### 문제 5
 
 수 타입의 값으로만 이루어진 두 배열을 입력받아, 다음과 같이 동작하는 함수를 작성하세요.
@@ -54,6 +98,21 @@ coins(263, [100, 50, 10, 5, 1]);
 1
 1
 1
+```
+
+```js
+function coins (num,arr){
+  const newArr = [];
+  for(i=0; i < arr.length; i++){
+    let natural = Math.trunc(num / arr[i])
+    if(num / arr[i] > 1){
+      for(j=0; j< natural ;j++){
+      console.log(arr[i]) * natural;
+      }
+      num -= arr[i] * natural;
+    }
+  }return newArr;
+}
 ```
 
 ### 문제 8
