@@ -73,6 +73,23 @@ function noDuplicate (arr){
 ```
 addArray([1, 2, 3], [4, 5, 6, 7]) -> [5, 7, 9, 7]
 ```
+```js
+function arrSum(arr1,arr2){
+  let newArr = []; 
+  for(i=0; i < arr1.length || i < arr2.length; i++){
+  if (arr1.length>arr2.length){
+    newArr.push(arr2[i] == null ? arr1[i] : arr1[i] + arr2[i]);
+  }
+  else if(arr1.length<arr2.length){
+    newArr.push(arr1[i] == null ? arr2[i] : arr1[i] + arr2[i]);
+  }
+  else{
+    newArr.push(arr1[i] + arr2[i]);
+  }
+  }
+  return newArr;
+}
+```
 
 ### 문제 6
 
