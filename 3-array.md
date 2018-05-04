@@ -99,6 +99,16 @@ function arrSum(arr1,arr2){
 ```
 combination([1, 2, 3]); -> [[1, 2], [1, 3], [2, 3]]
 ```
+```js
+function combination(arr){
+  const newArr = [];
+  for(i=0; i < arr.length; i++){
+    for(j=i+1; j < arr.length; j++){
+        newArr.push([arr[i],arr[j]]);
+    }
+  } return newArr;
+}
+```
 
 ### 문제 7
 
