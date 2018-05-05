@@ -77,6 +77,23 @@ function noDuplicate (arr){
 ```js
 addArray([1, 2, 3], [4, 5, 6, 7]) -> [5, 7, 9, 7]
 ```
+```js
+function arrSum(arr1,arr2){
+  let newArr = []; 
+  for(i=0; i < arr1.length || i < arr2.length; i++){
+  if (arr1.length>arr2.length){
+    newArr.push(arr2[i] == null ? arr1[i] : arr1[i] + arr2[i]);
+  }
+  else if(arr1.length<arr2.length){
+    newArr.push(arr1[i] == null ? arr2[i] : arr1[i] + arr2[i]);
+  }
+  else{
+    newArr.push(arr1[i] + arr2[i]);
+  }
+  }
+  return newArr;
+}
+```
 
 ### 문제 6
 
@@ -86,6 +103,16 @@ addArray([1, 2, 3], [4, 5, 6, 7]) -> [5, 7, 9, 7]
 
 ```js
 combination([1, 2, 3]); -> [[1, 2], [1, 3], [2, 3]]
+```
+```js
+function combination(arr){
+  const newArr = [];
+  for(i=0; i < arr.length; i++){
+    for(j=i+1; j < arr.length; j++){
+        newArr.push([arr[i],arr[j]]);
+    }
+  } return newArr;
+}
 ```
 
 ### 문제 7
@@ -124,3 +151,25 @@ function coins (num,arr){
 ### 문제 8
 
 수 타입의 값만 들어있는 배열을 입력받아, 해당 배열을 오름차순 정렬하는 함수를 작성하세요. (`Array.prototype.sort`를 사용하지 않고 작성해보세요. [선택 정렬](https://ko.wikipedia.org/wiki/%EC%84%A0%ED%83%9D_%EC%A0%95%EB%A0%AC)을 참고하세요.)
+
+```js
+function selectSort(arr){
+  let minCandi, temp;
+  for (i=0; i < arr.length; i++){
+    minCandi = i;
+    for (j=i+1; j < arr.length; j++){
+      if(arr[j] < arr[minCandi]){ 
+        minCandi = j;
+      }
+      //  minCandi = arr[j] < arr[minCandi] ? minCandi = j : minCandi; // if문이 좀더 직관적
+    }
+     temp = arr[i];
+     arr[i] = arr[minCandi];
+     arr[minCandi] = temp;
+  }
+  return arr;
+}
+arr = [4,3,5,2,6];
+```
+
+`가장어려웠다.. 새로운 개념으로 접근`
