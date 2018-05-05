@@ -152,7 +152,10 @@ function selectSort(arr){
   for (i=0; i < arr.length; i++){
     minCandi = i;
     for (j=i+1; j < arr.length; j++){
-      minCandi = arr[j] < arr[minCandi] ? minCandi = j : minCandi;
+      if(arr[j] < arr[minCandi]){ 
+        minCandi = j;
+      }
+      //  minCandi = arr[j] < arr[minCandi] ? minCandi = j : minCandi; // if문이 좀더 직관적
     }
      temp = arr[i];
      arr[i] = arr[minCandi];
@@ -160,7 +163,6 @@ function selectSort(arr){
   }
   return arr;
 }
-
 arr = [4,3,5,2,6];
 ```
 
