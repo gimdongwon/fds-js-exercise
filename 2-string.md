@@ -193,7 +193,9 @@ function firstConvert(str){
 ### 문제 11
 
 문자열을 입력받아, 문자열 안에 들어있는 단어 중 가장 긴 단어를 반환하는 함수를 작성하세요. (문자열에 개행이 없다고 가정합니다.)
+
 ```javascript
+
 function maxLength(str){
   let maxLen=0;
   let currentLen=0;
@@ -221,6 +223,7 @@ function maxLength(str){
 ### 문제 12
 
 문자열 `s`과 자연수 `n`을 입력받아, `s`의 첫 `n`개의 문자만으로 이루어진 새 문자열을 반환하는 함수를 작성하세요.
+
 ```js
  function snConvert (str, n){
    let newChar= '';
@@ -229,19 +232,42 @@ function maxLength(str){
    }return newChar;
  }
  ```
+
+ ```js
+ 승하 강사님풀이 (내꺼 에러남 ㅠ)
+  function snConvert (str, n){
+   let newChar= '';
+   for(i =0; i<n && i < str.length; i++){
+     newChar += str[i];
+   }return newChar;
+ }
+  ```
+
+```js
+강사님풀이 filter
+function firstStr(s,n){
+  return Array
+  .from(s)
+  .filter((item, index) => index < n)
+  .join('');
+}
+```
+
 ### 문제 13
 
 Camel case의 문자열을 입력받아, snake case로 바꾼 새 문자열을 반환하는 함수를 작성하세요.
 만약  str[i]===toUpperCase 이면
  i를 가져와서 toDownCase 하고 앞에 다가 '_'를 삽입
+
 ```js
+
 //만약  str[i]===toUpperCase 이면
 // i를 가져와서 toDownCase 하고 앞에 다가 '_'를 삽입
 
  function snakeConvert (str){
-   let atPoint, newChar='';
+   let newChar='';
    for(i=0; i < str.length; i++){
-   if(str[i].toUpperCase()===str[i]){
+   if(str[i].toUpperCase()===str[i] && i !== 0){
      newChar += '_' + str[i].toLowerCase();
    }else{
      newChar += str[i];
@@ -265,7 +291,6 @@ function snakeConvert (str){
    }
    else{
      newChar += str[i];
-     
    }
    }
    return newChar;
@@ -312,6 +337,15 @@ function binaryConvert (str){
   }
   return result;
 }
+```
+```js
+강사님풀이
+for(let i = 0; i<str.length; i++){
+  if(str[str.length - i - 1]==='1'){
+    result += 2 ** i;
+  }
+  
+}return result;
 ```
 ### 문제 17
 
